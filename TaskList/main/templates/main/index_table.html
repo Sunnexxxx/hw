@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th style="text-align: center">Action</th>
+            <th style="text-align: center">Date</th>
+        </tr>
+        {% for action in actions %}
+            <tr>
+            <th style="text-align: center">{{ action.action }}</th>
+            <th style="text-align: center">{{ action.date }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

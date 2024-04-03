@@ -1,0 +1,108 @@
+body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightgray;
+}
+.top{
+    width: 80vw;
+    height: 8vh;
+    position: absolute;
+    top: 0; left: 10vw;
+    background: #1c1c1c;
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-top: none;
+}
+.top ul{
+    margin: auto;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.top ul li, .top ul a{
+    font-size: 18px;
+    text-decoration: none;
+    color: lightgray;
+}
+.top ul li:hover, .top ul a:hover{
+    color: brown;
+}
+.content{
+    width: 80vw;
+    min-height: 92vh;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.content table{
+    width: 20vw;
+    background: bisque;
+}
+.content table,
+tr > * {
+  border: 1px solid;
+}
+.content .info_box{
+    margin-top: 100px;
+    width: 50vw;
+    background: bisque;
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+}
+.content .box{
+    width: 50vw;
+    height: 20vh;
+    background: bisque;
+    border-radius: 24px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.content .box img{
+    height: 15vh;
+}
+.content .box .info{
+    width: 20vw;
+    height: 15vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.content .box .info h4, h5, a{
+    margin: auto;
+}
+.content .box .info .task_navi{
+    display: flex;
+    gap: 10px;
+}
+.content .box .lights{
+    width: 15vh;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .box .lights .traffic{
+    margin: auto;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 90px;
+    border: 2px solid #1c1c1c;
+}
+.content form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    background: bisque;
+    border-radius: 24px;
+}

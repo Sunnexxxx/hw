@@ -1,0 +1,26 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body {% if theme == 1 %} style="background: #1c1c1c;" {% endif %}>
+    <section class="top">
+        <ul>
+            <li><a href="{% url 'task_list' %}">Tasks</a></li>
+            <li><a href="{% url 'add_task' %}">Create</a></li>
+            <li><a href="{% url 'task_history' %}">History</a></li>
+            <li><a href="{% url 'settings_page' %}">Settings</a></li>
+        </ul>
+    </section>
+    <section class="content">
+        {% block content %}{% endblock %}
+    </section>
+</body>
+</html>

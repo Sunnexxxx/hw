@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <a href="{% url 'actions_table' %}" style="font-size: 18px">History view</a>
+    {% for task in tasks %}
+        <div class="box">
+            <img src="{{ task.image.url }}">
+            <div class="info">
+                <h4>{{ task.title }}</h4>
+                <h5><span style="color: brown">Completed at: </span>{{ task.completed_at }}</h5>
+                <div class="task_navi">
+                    <a href="{% url 'task_delete' task.slug%}">Delete</a> |
+                    <a href="{% url 'task_return' task.slug %}">In Progress</a> |
+                    <a href="{% url 'task_info' task.slug %}">More info...</a>
+                </div>
+            </div>
+            <div class="lights">
+                {% if task.priority == 'High' %}
+                    <div class="traffic" style="background: red;"></div>
+                {% elif task.priority == 'Middle' %}
+                    <div class="traffic" style="background: yellow;"></div>
+                {% elif task.priority == 'Low' %}
+                    <div class="traffic" style="background: green;"></div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

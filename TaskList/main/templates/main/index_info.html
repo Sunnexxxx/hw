@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="info_box">
+        <h4>{{ task.title }}</h4>
+        <p><span style="color: brown">Description: </span>{{ task.description }}</p>
+        <p><span style="color: brown">Priority: </span>{{ task.priority }}</p>
+        <p><span style="color: brown">Create at: </span>{{ task.create_at }}</p>
+        {% if task.status == 'Completed' %}
+            <p><span style="color: green">Completed at: </span>{{ task.completed_at }}</p>
+        {% endif %}
+        <p><span style="color: brown">Deadline: </span>{{ task.deadline }}</p>
+        <p><span style="color: brown">Status: </span>{{ task.status }}</p>
+        <div class="task_navi">
+            <a href="{% url 'task_delete' task.slug%}">Delete</a> |
+            {% if task.status == 'In progress' %}
+                <a href="{% url 'task_complete' task.slug%}">Complete</a> |
+                <a href="{% url 'task_update' task.slug%}">Update</a> |
+                <a href="{% url 'task_list' %}">Back</a>
+            {% elif task.status == 'Completed' %}
+                <a href="{% url 'task_return' task.slug %}">In Progress</a> |
+                <a href="{% url 'task_history' %}">Back</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
